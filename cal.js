@@ -62,13 +62,29 @@ class Calculator {
   }
 
   updateDisplay() {
-    this.currentOperandTextElement.innerText = this.currentOperand;
+    this.currentOperandTextElement.innerText = this.getDisplayNumber(this.currentOperand);
     if (this.operation != null) {
-        this.previousOperandTextElement.innerText =
-        `${this.previousOperand} ${this.operation}`
-    } else {
-        this.previousOperandTextElement.innerText = '';
+      this.previousOperandTextElement.innerText =
+        `${this.getDisplayNumber(this.previousOperand )} ${this.operation}`;
     } 
+  }
+
+  getDisplayNumber(number) {
+    const stringNumber = number.toString();
+    const intergerDigits = parseFloat(stringNumber.split('.')[0]);
+    const decimalDigits = stringNumber.split('.')[1];
+    let integerDisplay;
+    if (isNaN(intergerDigits)) {
+      integerDisplay = '';
+    } else {
+      integerDisplay = intergerDigits.toLocaleString('en', {
+        maximumFractionDigits: 0 })
+    }
+    if (decimalDigits != null) {
+      return `${integerDisplay}.${decimalDigits}`;
+    } else {
+      return integerDisplay;
+    }
   }
 }
 
