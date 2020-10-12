@@ -61,14 +61,6 @@ class Calculator {
       this.previousOperand = '';
   }
 
-  updateDisplay() {
-    this.currentOperandTextElement.innerText = this.getDisplayNumber(this.currentOperand);
-    if (this.operation != null) {
-      this.previousOperandTextElement.innerText =
-        `${this.getDisplayNumber(this.previousOperand )} ${this.operation}`;
-    } 
-  }
-
   getDisplayNumber(number) {
     const stringNumber = number.toString();
     const intergerDigits = parseFloat(stringNumber.split('.')[0]);
@@ -84,6 +76,16 @@ class Calculator {
       return `${integerDisplay}.${decimalDigits}`;
     } else {
       return integerDisplay;
+    }
+  }
+
+  updateDisplay() {
+    this.currentOperandTextElement.innerText = this.getDisplayNumber(this.currentOperand);
+    if (this.operation != null) {
+      this.previousOperandTextElement.innerText =
+        `${this.getDisplayNumber(this.previousOperand )} ${this.operation}`
+    } else {
+      this.previousOperandTextElement.innerText = '';
     }
   }
 }
