@@ -1,0 +1,26 @@
+{
+  "name": "javascript_calculator",
+  "version": "1.0.0",
+  "description": "This is a simple calculator built basically with javascript",
+  "main": "cal.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run start-dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamezjaz/JS_calculator.git"
+  },
+  "keywords": [
+    "JS",
+    "Calcultor"
+  ],
+  "author": "James Chigozie Odufu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jamezjaz/JS_calculator/issues"
+  },
+  "homepage": "https://github.com/jamezjaz/JS_calculator#readme"
+}
