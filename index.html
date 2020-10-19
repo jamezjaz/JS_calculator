@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div class="calculator-grid">
+        <div class="output flex d-flex align-items-end justify-content-around flex-column p-3 ">
+            <div data-previous-operand class="previous-operand"></div>
+            <div data-current-operand class="current-operand"></div>
+        </div>
+        <button data-all-clear class="span-two border-white bg-danger">AC</button>
+        <button data-delete class="border-white bg-warning">DEL</button>
+        <button data-operation class="border-white">÷</button>
+        <button data-number class="border-white">1</button>
+        <button data-number class="border-white">2</button>
+        <button data-number class="border-white">3</button>
+        <button data-operation class="border-white">*</button>
+        <button data-number class="border-white">4</button>
+        <button data-number class="border-white">5</button>
+        <button data-number class="border-white">6</button>
+        <button data-operation class="border-white">+</button>
+        <button data-number class="border-white">7</button>
+        <button data-number class="border-white">8</button>
+        <button data-number class="border-white">9</button>
+        <button data-operation class="border-white">-</button>
+        <button data-number class="border-white">.</button>
+        <button data-number class="border-white">0</button>
+        <button data-equals class="span-two border-white bg-success">=</button>
+    </div>
+
+    <script src="/cal.js"></script>
+</body>
+</html>
