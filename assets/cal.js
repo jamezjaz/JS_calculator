@@ -1,4 +1,4 @@
-/* eslint-disable no-restricted-globals, class-methods-use-this, no-else-return */
+/* eslint-disable no-restricted-globals, class-methods-use-this, no-else-return, no-unused-vars */
 
 class Calculator {
   constructor(previousOperandTextElement, currentOperandTextElement) {
