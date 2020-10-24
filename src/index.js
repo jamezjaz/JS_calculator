@@ -1,5 +1,11 @@
 /* eslint-disable no-restricted-globals, class-methods-use-this, no-else-return, no-unused-vars */
 
+import {
+  numberButtons, operationButtons, equalsButton, deleteButton,
+  allClearButton, previousOperandTextElement, currentOperandTextElement,
+} from './selectors';
+import footerCon from './footer';
+
 class Calculator {
   constructor(previousOperandTextElement, currentOperandTextElement) {
     this.previousOperandTextElement = previousOperandTextElement;
@@ -99,15 +105,6 @@ class Calculator {
   }
 }
 
-
-const numberButtons = document.querySelectorAll('[data-number]');
-const operationButtons = document.querySelectorAll('[data-operation]');
-const equalsButton = document.querySelector('[data-equals]');
-const deleteButton = document.querySelector('[data-delete]');
-const allClearButton = document.querySelector('[data-all-clear]');
-const previousOperandTextElement = document.querySelector('[data-previous-operand]');
-const currentOperandTextElement = document.querySelector('[data-current-operand]');
-
 const calculator = new Calculator(previousOperandTextElement,
   currentOperandTextElement);
 
@@ -125,27 +122,23 @@ operationButtons.forEach(button => {
   });
 });
 
-equalsButton.addEventListener('click', () => {
-  calculator.compute();
-  calculator.updateDisplay();
-});
+const equalsBtn = (() => {
+  equalsButton.addEventListener('click', () => {
+    calculator.compute();
+    calculator.updateDisplay();
+  });
+})();
 
-allClearButton.addEventListener('click', () => {
-  calculator.clear();
-  calculator.updateDisplay();
-});
+const allClearBtn = (() => {
+  allClearButton.addEventListener('click', () => {
+    calculator.clear();
+    calculator.updateDisplay();
+  });
+})();
 
-deleteButton.addEventListener('click', () => {
-  calculator.delete();
-  calculator.updateDisplay();
-});
-
-const footerCon = (() => {
-  const footer = document.querySelector('#footer');
-  const footerItem = document.createElement('div');
-  footerItem.classList = 'bg-dark text-center text-white py-4';
-  footerItem.innerHTML = `
-                      &copy; 2020 <strong>Jamezjaz || JavaScript Calculator</strong>
-                      `;
-  footer.appendChild(footerItem);
+const deleteBtn = (() => {
+  deleteButton.addEventListener('click', () => {
+    calculator.delete();
+    calculator.updateDisplay();
+  });
 })();
