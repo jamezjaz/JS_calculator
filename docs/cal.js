@@ -125,20 +125,26 @@ operationButtons.forEach(button => {
   });
 });
 
-equalsButton.addEventListener('click', () => {
-  calculator.compute();
-  calculator.updateDisplay();
-});
+const equalsBtn = (() => {
+  equalsButton.addEventListener('click', () => {
+    calculator.compute();
+    calculator.updateDisplay();
+  });
+})();
 
-allClearButton.addEventListener('click', () => {
-  calculator.clear();
-  calculator.updateDisplay();
-});
+const allClearBtn = (() => {
+  allClearButton.addEventListener('click', () => {
+    calculator.clear();
+    calculator.updateDisplay();
+  });
+})();
 
-deleteButton.addEventListener('click', () => {
-  calculator.delete();
-  calculator.updateDisplay();
-});
+const deleteBtn = (() => {
+  deleteButton.addEventListener('click', () => {
+    calculator.delete();
+    calculator.updateDisplay();
+  });
+})();
 
 const footerCon = (() => {
   const footer = document.querySelector('#footer');
